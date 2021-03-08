@@ -1,5 +1,6 @@
 :root {
   --black: #13161a;
+  --grey: #4a535f;
   --white: #fff;
   --blue: #4284f4;
   --primary: #2FB578;
@@ -26,6 +27,7 @@ html {
 }
 
 body {
+  position: relative;
   width: 100%;
   height: 100%;
   max-height: 750pt;
@@ -212,4 +214,18 @@ main section div section div div span:nth-child(4) {
 
 main section div section div div span:nth-child(5) {
   opacity: 1;
+}
+
+footer {
+  font-size: 10pt;
+  position: absolute;
+  bottom: 16pt;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--grey);
+}
+
+footer a {
+  color: var(--blue);
 }
