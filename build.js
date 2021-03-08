@@ -1,6 +1,6 @@
 var fs = require('fs');
 var archiver = require('archiver');
-var output = fs.createWriteStream('./resume.zip');
+var output = fs.createWriteStream('./ryan_mchenry_resume.zip');
 var archive = archiver('zip', {
     gzip: true,
     zlib: { level: 9 } // Sets the compression level.
@@ -40,8 +40,8 @@ archive.finalize().then(() => {
   
   // run the conversion and write the result to a file
   client.convertFileToFile(
-      "resume.zip",
-      "resume.pdf",
+      "ryan_mchenry_resume.zip",
+      "ryan_mchenry_resume.pdf",
       function(err, fileName) {
           if (err) return console.error("Pdfcrowd Error: " + err);
           console.log("Success: the file was created " + fileName);
