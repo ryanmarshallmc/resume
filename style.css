@@ -1,10 +1,10 @@
 :root {
   --black: #13161a;
-  --grey: #4a535f;
+  --lightgrey: #76859b;
+  --grey: #4e5561;
   --white: #fff;
   --blue: #4284f4;
-  --primary: #2FB578;
-  --light: #a8ffd8;
+  --primary: #2fb578;
 }
 
 * {
@@ -13,10 +13,12 @@
 }
 
 html {
-  background: var(--white);
+  background: var(--black);
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  max-height: 750pt;
+  max-width: 563pt;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,10 +35,10 @@ body {
   max-height: 750pt;
   max-width: 563pt;
   flex-shrink: 0;
-  background: var(--black);
-  color: var(--white);
-  padding: 32pt 16pt;
-  font-family: 'Rubik', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  padding: 32pt;
+  font-family: "Inter", sans-serif;
   overflow: hidden;
 }
 
@@ -47,36 +49,37 @@ header {
   align-items: center;
 }
 
-header img {
-  width: 64pt;
-  margin-right: 8pt;
-}
 
 header h1 {
-  font-size: 20pt;
+  font-size: 18pt;
   font-weight: 800;
-  color: var(--white);
+  color: var(--black);
   line-height: 1.3;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Inter", sans-serif;
 }
 
-header h2, header h3 {
+header h2,
+header h3 {
   font-size: 11pt;
   font-weight: 300;
-  color: var(--primary);
-  line-height: 1.2;
+  color: var(--lightgrey);
+  line-height: 1.3;
 }
 
 header aside {
-  margin-left: auto
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 header a {
   font-size: 10pt;
-  color: var(--blue);
+  font-weight: 300;
+  color: var(--blue) !important;
   display: block;
-  text-align: right;
-  padding: 2pt 0;
+  line-height: 1.5;
+  tex-align: right;
 }
 
 main {
@@ -84,83 +87,105 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  gap: 32pt;
 }
 
-main section {
-  width: 50%;
-  padding: 8pt;
+main > section:nth-child(1) {
+  width: 40%;
+}
+
+main > section:nth-child(2) {
+  width: 60%;
 }
 
 main section h4 {
   font-size: 12pt;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--primary);
   font-weight: 900;
   line-height: 1;
   padding: 16pt 0 4pt 0;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Inter", sans-serif;
 }
 
 main section div {
-  padding: 8pt 0 4pt 0;
+  padding: 8pt 0 6pt 0;
 }
 
 main section div h5 {
   font-size: 14pt;
   font-weight: 700;
-  color: var(--light);
-  line-height: 1;
-}
-
-main section div aside {
-  font-size: 10pt;
-  font-weight: 300;
-  color: var(--primary);
-  line-height: 1;
-  padding: 4pt 0;
-  font-family: 'Roboto Slab', serif;
+  color: var(--black);
+  line-height: 1.2;
+  margin-bottom: 2pt;
 }
 
 main section div h6 {
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: 600;
-  /* margin-bottom: 4pt; */
+  color: var(--lightgrey);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6pt;
+}
+
+main section div h6 aside {
+  font-weight: 200;
 }
 
 main section div strong {
   font-size: 10pt;
   font-weight: 500;
-  color: var(--primary);
+  color: var(--black);
+}
+
+main section div strong:nth-child(5) {
+  padding-top: 8pt;
+  display: block;
 }
 
 main section div p {
   font-size: 10pt;
   font-weight: 300;
+  color: var(--grey);
   margin: 2pt 0;
+  line-height: 1.4;
 }
 
 main section div span {
   display: block;
-  padding-left: 4pt;
   font-size: 10pt;
   font-weight: 300;
+  color: var(--grey);
+  line-height: 1.5;
 }
 
 main section div div {
   font-size: 10pt;
-  color: var(--primary);
-  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main section div div img {
+  width: 8pt;
+  height: 8pt;
+  object-fit: contain;
+  display: inline-block;
+  position: relative;
 }
 
 main section div div a {
   font-size: 10pt;
-  color: var(--blue);
+  color: var(--blue) !important;
   font-weight: 400;
-  margin-left: 4pt;
+  margin-left: 3pt;
+  margin-right: 8pt;
 }
 
 main section div section {
-  width: 48%;
+  width: 100%;
   display: inline-block;
   padding: 0;
   padding-right: 8pt;
@@ -173,59 +198,60 @@ main section div section h6 {
 }
 
 main section div section div {
-  color: var(--white);
+  color: var(--black);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0;
+  margin-bottom: 4pt;
 }
 
-main section div section div div{
+main section div section div div {
   margin-left: auto;
-  width: 50pt;
+  width: 40pt;
   flex-shrink: 0;
+  display: flex;
 }
 
-main section div section div div span {
+main section div section div div img {
   width: 8pt;
   height: 8pt;
-  margin: 0 1pt;
   flex-shrink: 0;
   padding: 0;
   display: inline-block;
-  background: var(--light);
 }
 
-main section div section div div span:nth-child(1) {
+main section div section div div img:nth-child(1) {
   opacity: 0.2;
 }
 
-main section div section div div span:nth-child(2) {
+main section div section div div img:nth-child(2) {
   opacity: 0.4;
 }
 
-main section div section div div span:nth-child(3) {
+main section div section div div img:nth-child(3) {
   opacity: 0.6;
 }
 
-main section div section div div span:nth-child(4) {
+main section div section div div img:nth-child(4) {
   opacity: 0.8;
 }
 
-main section div section div div span:nth-child(5) {
+main section div section div div img:nth-child(5) {
   opacity: 1;
 }
 
 footer {
-  font-size: 10pt;
+  font-size: 9pt;
+  font-weight: 300;
   position: absolute;
   bottom: 16pt;
   left: 0;
   width: 100%;
   text-align: center;
-  color: var(--grey);
+  color: var(--lightgrey);
 }
 
 footer a {
-  color: var(--blue);
+  color: var(--blue) !important;
 }
